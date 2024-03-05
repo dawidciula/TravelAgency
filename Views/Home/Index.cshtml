@@ -1,0 +1,96 @@
+﻿@using UbbRentalBike.ViewModel;
+@model IEnumerable<TripDetailViewModel>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<link href="css/HomeStyle.css" rel="stylesheet" type="text/css">
+<div class="text-center">
+    <img src="https://static.eccoholiday.com/www/logo2022/jpg/logo-ecco-travel-default.jpg" alt="logo" width="500px" height="200px">
+    <h1 class="display-4">Witaj w naszym biurze podrózy!</h1>
+    <p>Wybierz interesującą cię wycieczkę!</p>
+    <div class="content" display="block">
+        <div class="trip1">
+            <img src="https://fly.pl/wp-content/uploads/2014/06/Barcelona.jpg" alt="spain">
+            <ul>
+                @foreach (var trip in @Model)
+                {
+                    if (@trip.Id == 1)
+                    {
+
+                        <li>
+                            <p>Cel podróży: @trip.DestinationCity</p>
+                        </li>
+                        <li>
+                            <p>Data: @trip.TripDate</p>
+                        </li>
+                        <li>
+                            <p>Miejsce wylotu: @trip.CityDeparture</p>
+                        </li>
+                        <li>
+                            <p>AllInclusive: @trip.AllInclusive</p>
+                        </li>
+                        <li>
+                            <a asp-action="Detail" asp-controller="Home" asp-route-id="@trip.Id">Dowiedz się więcej!</a>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+        <div class="trip2">
+            <img src="https://www.national-geographic.pl/media/cache/slider_big/uploads/media/default/0014/46/zakynthos-traci-jedna-z-najwiekszych-atrakcji_1.jpeg" alt="grecee">
+            <ul>
+                @foreach (var trip in @Model)
+                {
+                    if (@trip.Id == 2)
+                    {
+
+                        <li>
+                            <p>Cel podróży: @trip.DestinationCity</p>
+                        </li>
+                        <li>
+                            <p>Data: @trip.TripDate</p>
+                        </li>
+                        <li>
+                            <p>Miejsce wylotu: @trip.CityDeparture</p>
+                        </li>
+                        <li>
+                            <p>AllInclusive: @trip.AllInclusive</p>
+                        </li>
+                        <li>
+                            <a asp-action="Detail" asp-controller="Home" asp-route-id="@trip.Id">Dowiedz się więcej!</a>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+        <div class="trip3">
+            <img src="https://www.itaka.pl/blog/wp-content/uploads/2019/11/rynek-starego-miasta-w-pradze-czechy-1920x1280.jpg" alt="chechrepublic">
+            <ul>
+                @foreach (var trip in @Model)
+                {
+                    if (@trip.Id == 3)
+                    {
+
+                        <li>
+                            <p>Cel podróży: @trip.DestinationCity</p>
+                        </li>
+                        <li>
+                            <p>Data: @trip.TripDate</p>
+                        </li>
+                        <li>
+                            <p>Miejsce wylotu: @trip.CityDeparture</p>
+                        </li>
+                        <li>
+                            <p>AllInclusive: @trip.AllInclusive</p>
+                        </li>
+                        <li>
+                            <a asp-action="Detail" asp-controller="Home" asp-route-id="@trip.Id">Dowiedz się więcej!</a>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+</div>

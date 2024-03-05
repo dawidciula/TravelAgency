@@ -1,0 +1,24 @@
+.content img {
+    width: 300px;
+    height: 200px;
+}
+.content{
+    content: '';
+    display: block;
+    clear: both;
+}
+.trip1 {
+    width: 33%;
+    float: left;
+}
+.trip2 {
+    width: 33%;
+    float: left;
+}
+.trip3 {
+    width: 33%;
+    float: left;
+}
+ul li {
+    list-style-type: none;
+}
