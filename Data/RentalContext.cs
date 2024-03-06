@@ -8,14 +8,14 @@ public class RentalContext : DbContext
     {
     }
     
-    public DbSet<Participants> Participant { get; set; }
-    public DbSet<Reservations> Reservation { get; set; }
-    public DbSet<Trips> Trip { get; set; }
+    public DbSet<Participant> Participants { get; set; }
+    public DbSet<Reservation> Reservations { get; set; }
+    public DbSet<Trip> Trips { get; set; }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Participants>().ToTable("Participants");
-        modelBuilder.Entity<Reservations>().ToTable("Reservations");
-        modelBuilder.Entity<Trips>().ToTable("Trips");
+        modelBuilder.Entity<Participant>().ToTable("Participants");
+        modelBuilder.Entity<Reservation>().ToTable("Reservations");
+        modelBuilder.Entity<Trip>().ToTable("Trips");
     }
 }

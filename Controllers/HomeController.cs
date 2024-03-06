@@ -64,6 +64,11 @@ namespace UbbRentalBike.Controllers
             return View(trip);
         }
 
+        public IActionResult Reservations()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

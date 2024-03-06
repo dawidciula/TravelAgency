@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace UbbRentalBike.Models;
 
-public class Trips
+public class Trip
 {
     public int Id { get; set; }
     public string TripName { get; set; }
@@ -12,5 +12,5 @@ public class Trips
     public string PlaceOfDeparture { get; set; }
     public string Destination { get; set; }
     
-    public List<Reservations> Reservation { get; set; }
+    public List<Reservation> Reservation { get; set; }
 }
