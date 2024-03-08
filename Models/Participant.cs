@@ -1,3 +1,5 @@
+using UbbRentalBike.Models;
+
 namespace UbbRentalBike.Models;
 
 public class Participant

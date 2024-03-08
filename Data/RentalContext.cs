@@ -4,9 +4,13 @@ namespace UbbRentalBike.Data;
 
 public class RentalContext : DbContext
 {
-    public RentalContext(DbContextOptions<RentalContext> options) : base(options)
+    private readonly IConfiguration _configuration;
+
+    public RentalContext(DbContextOptions<RentalContext> options, IConfiguration configuration) : base(options)
     {
+        _configuration = configuration;
     }
+
     
     public DbSet<Participant> Participants { get; set; }
     public DbSet<Reservation> Reservations { get; set; }
