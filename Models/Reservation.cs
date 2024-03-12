@@ -7,6 +7,6 @@ public class Reservation
     public int TripId { get; set; }
     public DateTime ReservationDate { get; set; }
     
-    public Participant Particpant { get; set; }
-    public Trip Trip { get; set; }
+    public Participant? Particpant { get; set; }
+    public Trip? Trip { get; set; }
 }

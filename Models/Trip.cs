@@ -1,6 +1,3 @@
-using System.Runtime.InteropServices.JavaScript;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
-
 namespace UbbRentalBike.Models;
 
 public class Trip
@@ -12,5 +9,5 @@ public class Trip
     public string PlaceOfDeparture { get; set; }
     public string Destination { get; set; }
     
-    public List<Reservation> Reservation { get; set; }
+    public List<Reservation>? Reservation { get; set; }
 }

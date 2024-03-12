@@ -10,7 +10,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0-preview.1.24081.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.0-preview.1.24081.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0-preview.1.24081.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -22,6 +22,11 @@
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="Views\Home\Participants\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Participants\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Participants\Delete.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Participants\Details.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Participants\Edit.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Participants\Index.cshtml" />
   </ItemGroup>
 
 </Project>

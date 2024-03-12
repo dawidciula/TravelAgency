@@ -1,5 +1,3 @@
-using UbbRentalBike.Models;
-
 namespace UbbRentalBike.Models;
 
 public class Participant
@@ -10,5 +8,5 @@ public class Participant
     public DateTime DateOfBirth { get; set; }
     public string EmailAddress { get; set; }
     
-    public List<Reservation> Reservation { get; set; }
+    public List<Reservation>? Reservation { get; set; }
 }
