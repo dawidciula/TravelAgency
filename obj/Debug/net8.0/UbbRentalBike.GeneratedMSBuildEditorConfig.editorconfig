@@ -38,26 +38,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/dawidciula/Desktop/UbbRentalBike/Views/Participants/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGFydGljaXBhbnRzL0NyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/dawidciula/Desktop/UbbRentalBike/Views/Participants/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGFydGljaXBhbnRzL0RlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/dawidciula/Desktop/UbbRentalBike/Views/Participants/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGFydGljaXBhbnRzL0RldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/dawidciula/Desktop/UbbRentalBike/Views/Participants/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGFydGljaXBhbnRzL0VkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/dawidciula/Desktop/UbbRentalBike/Views/Participants/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGFydGljaXBhbnRzL0luZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/dawidciula/Desktop/UbbRentalBike/Views/Reservations/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmVzZXJ2YXRpb25zL0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
