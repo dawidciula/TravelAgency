@@ -1,23 +1,21 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Pomelo.EntityFrameworkCore.MySql;
 using UbbRentalBike.Data;
-using System;
+using UbbRentalBike.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// Dodaj DbContext do kontenera wstrzykiwania zależności
 builder.Services.AddDbContext<RentalContext>((serviceProvider, options) =>
 {
-    options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"), new MySqlServerVersion(new Version(8, 0, 27)));
+    options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"), 
+        new MySqlServerVersion(new Version(8, 0, 27)));
 });
+
+// Dodaj repozytorium do kontenera wstrzykiwania zależności
+builder.Services.AddScoped<IParticipantRepository, ParticipantRepository>();
 
 var app = builder.Build();
 
