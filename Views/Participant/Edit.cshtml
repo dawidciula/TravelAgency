@@ -1,0 +1,24 @@
+@model UbbRentalBike.Models.Participant
+@{
+    ViewData["Title"] = "Edit";
+}
+<h1>Edit</h1>
+<div>
+    <h4>Participant</h4>
+    <hr />
+    <form asp-action="Edit" method="post">
+        <input type="hidden" asp-for="Id" />
+        <div class="form-group">
+            <label asp-for="Name" class="control-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <!-- Pozostałe pola formularza -->
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

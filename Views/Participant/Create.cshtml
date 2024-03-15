@@ -1,0 +1,23 @@
+@model UbbRentalBike.Models.Participant
+@{
+    ViewData["Title"] = "Create";
+}
+<h1>Create</h1>
+<div>
+    <h4>Participant</h4>
+    <hr />
+    <form asp-action="Create">
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <!-- Pozostałe pola formularza -->
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
