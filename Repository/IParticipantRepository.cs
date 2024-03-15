@@ -8,6 +8,6 @@ public interface IParticipantRepository
     Participant GetById(int Id);
     void Insert(Participant participant);
     void Update(Participant participant);
-    void Delete(Participant participant);
+    void Delete(int Id);
     void Save();
 }
