@@ -16,6 +16,7 @@ builder.Services.AddDbContext<RentalContext>((serviceProvider, options) =>
 
 // Dodaj repozytorium do kontenera wstrzykiwania zależności
 builder.Services.AddScoped<IParticipantRepository, ParticipantRepository>();
+builder.Services.AddScoped<ITripRepository, TripRepository>();
 
 var app = builder.Build();
 
