@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using UbbRentalBike.Data;
 using UbbRentalBike.Repository;
+using UbbRentalBike.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,8 @@ builder.Services.AddDbContext<RentalContext>((serviceProvider, options) =>
 // Dodaj repozytorium do kontenera wstrzykiwania zależności
 builder.Services.AddScoped<IParticipantRepository, ParticipantRepository>();
 builder.Services.AddScoped<ITripRepository, TripRepository>();
+
+builder.Services.AddScoped<ITripService, TripService>();
 
 var app = builder.Build();
 

@@ -110,6 +110,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJpcC9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/dawidciula/RiderProjects/UbbRentalBike/Views/TripService/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJpcFNlcnZpY2UvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/dawidciula/RiderProjects/UbbRentalBike/Views/TripService/SearchById.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJpcFNlcnZpY2UvU2VhcmNoQnlJZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/dawidciula/RiderProjects/UbbRentalBike/Views/TripService/SearchByName.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJpcFNlcnZpY2UvU2VhcmNoQnlOYW1lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/dawidciula/RiderProjects/UbbRentalBike/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
