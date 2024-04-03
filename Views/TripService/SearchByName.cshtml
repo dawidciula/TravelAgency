@@ -1,0 +1,43 @@
+@model UbbRentalBike.Models.Trip
+
+<h1>Wyniki wyszukiwania po nazwie</h1>
+
+@if (Model != null)
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nazwa</th>
+            <th>Data rozpoczęcia</th>
+            <th>Data zakończenia</th>
+            <th>Miejsce wyjazdu</th>
+            <th>Cel</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>@Model.Id</td>
+            <td>@Model.TripName</td>
+            <td>@Model.StartDate</td>
+            <td>@Model.EndData</td>
+            <td>@Model.PlaceOfDeparture</td>
+            <td>@Model.Destination</td>
+        </tr>
+        </tbody>
+    </table>
+    <form asp-action="Index" asp-controller="TripService">
+        <div>
+            <button type="submit">Wróć</button>
+        </div>
+    </form>
+}
+else
+{
+    <p>Brak wyników wyszukiwania.</p>
+    <form asp-action="Index" asp-controller="TripService">
+        <div>
+            <button type="submit">Wróć</button>
+        </div>
+    </form>
+}

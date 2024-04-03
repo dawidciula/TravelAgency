@@ -1,0 +1,43 @@
+@model IEnumerable<UbbRentalBike.Models.Trip>
+
+<h1>Lista Wycieczek</h1>
+
+<form asp-action="Index" asp-controller="TripService" method="get">
+    <div>
+        <input type="text" name="nameFilter" placeholder="Wyszukaj po nazwie">
+        <button type="submit">Filtruj</button>
+    </div>
+</form>
+
+<form asp-action="Index" asp-controller="TripService" method="get">
+    <div>
+        <input type="text" name="tripId" placeholder="Wyszukaj po ID">
+        <button type="submit">Szukaj</button>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nazwa</th>
+        <th>Data rozpoczęcia</th>
+        <th>Data zakończenia</th>
+        <th>Miejsce wyjazdu</th>
+        <th>Cel</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var trip in Model)
+    {
+        <tr>
+            <td>@trip.Id</td>
+            <td>@trip.TripName</td>
+            <td>@trip.StartDate.ToShortDateString()</td>
+            <td>@trip.EndData.ToShortDateString()</td>
+            <td>@trip.PlaceOfDeparture</td>
+            <td>@trip.Destination</td>
+        </tr>
+    }
+    </tbody>
+</table>
