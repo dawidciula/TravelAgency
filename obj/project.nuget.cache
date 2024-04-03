@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WOwqLQRbhPIyI9kcTp7YFYhETlRsmn9AgwoYP3NUafwGM7wryfcM1QF5c3PPDl7eT/oY4Jq7cWMADu/FTitkow==",
+  "dgSpecHash": "h/zrZqew3LTIC/6VnXnoqywMbii/oNa9ZlLZsbORgR5G/4mRl2qLlKjhK7jdOipVBARP5hYmoZkcidkVH7KP9w==",
   "success": true,
-  "projectFilePath": "/Users/dawidciula/Desktop/UbbRentalBike/UbbRentalBike.csproj",
+  "projectFilePath": "/Users/dawidciula/RiderProjects/UbbRentalBike/UbbRentalBike.csproj",
   "expectedPackageFiles": [
     "/Users/dawidciula/.nuget/packages/azure.core/1.35.0/azure.core.1.35.0.nupkg.sha512",
     "/Users/dawidciula/.nuget/packages/azure.identity/1.10.3/azure.identity.1.10.3.nupkg.sha512",

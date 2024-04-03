@@ -27,6 +27,7 @@
     <_ContentIncludedByDefault Remove="Views\Participants\Details.cshtml" />
     <_ContentIncludedByDefault Remove="Views\Participants\Edit.cshtml" />
     <_ContentIncludedByDefault Remove="Views\Participants\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\TripService\Index.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,6 +36,7 @@
     <UpToDateCheckInput Remove="Views\Participants\Details.cshtml" />
     <UpToDateCheckInput Remove="Views\Participants\Edit.cshtml" />
     <UpToDateCheckInput Remove="Views\Participants\Index.cshtml" />
+    <UpToDateCheckInput Remove="Views\TripService\Index.cshtml" />
   </ItemGroup>
 
 </Project>

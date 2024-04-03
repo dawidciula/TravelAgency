@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/dawidciula/Desktop/UbbRentalBike/UbbRentalBike.csproj": {}
+    "/Users/dawidciula/RiderProjects/UbbRentalBike/UbbRentalBike.csproj": {}
   },
   "projects": {
-    "/Users/dawidciula/Desktop/UbbRentalBike/UbbRentalBike.csproj": {
+    "/Users/dawidciula/RiderProjects/UbbRentalBike/UbbRentalBike.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/dawidciula/Desktop/UbbRentalBike/UbbRentalBike.csproj",
+        "projectUniqueName": "/Users/dawidciula/RiderProjects/UbbRentalBike/UbbRentalBike.csproj",
         "projectName": "UbbRentalBike",
-        "projectPath": "/Users/dawidciula/Desktop/UbbRentalBike/UbbRentalBike.csproj",
+        "projectPath": "/Users/dawidciula/RiderProjects/UbbRentalBike/UbbRentalBike.csproj",
         "packagesPath": "/Users/dawidciula/.nuget/packages/",
-        "outputPath": "/Users/dawidciula/Desktop/UbbRentalBike/obj/",
+        "outputPath": "/Users/dawidciula/RiderProjects/UbbRentalBike/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/dawidciula/.nuget/NuGet/NuGet.Config"
