@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using UbbRentalBike.Models;
 using UbbRentalBike.Services;
 
 namespace UbbRentalBike.Controllers
@@ -14,7 +13,7 @@ namespace UbbRentalBike.Controllers
             _tripService = tripService;
         }
 
-        public IActionResult Index(int page = 1, string nameFilter = null, int? tripId = null)
+        public IActionResult Index(int page = 1, string nameFilter = null, int? tripId = null, string buttonType = null)
         {
             if (tripId.HasValue)
             {
@@ -28,7 +27,17 @@ namespace UbbRentalBike.Controllers
             }
             else
             {
+                if (buttonType == "previous")
+                {
+                    page = page > 1 ? page - 1 : 1;
+                }
+                else if (buttonType == "next")
+                {
+                    page++;
+                }
+
                 var trips = _tripService.GetTripsPerPage(page, PageSize);
+                ViewBag.Page = page;
                 return View(trips);
             }
         }
