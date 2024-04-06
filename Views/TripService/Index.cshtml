@@ -41,3 +41,11 @@
     }
     </tbody>
 </table>
+
+<form asp-action="Index" asp-controller="TripService" method="get">
+    <div>
+        <input type="hidden" name="page" value="@ViewBag.Page" />
+        <button type="submit" name="buttonType" value="previous">Poprzednie</button>
+        <button type="submit" name="buttonType" value="next">Następne</button>
+    </div>
+</form>
