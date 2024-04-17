@@ -53,14 +53,8 @@ namespace UbbRentalBike.Controllers
                 }
                 return View(participant);
             }
-            
-            if (ModelState.IsValid)
-            {
-                _participantRepository.Insert(participant);
-                return RedirectToAction(nameof(Index));
-                
-            }
-            return View(participant);
+            _participantRepository.Insert(participant);
+            return RedirectToAction(nameof(Index));
         }
 
         public IActionResult Edit(int id)

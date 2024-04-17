@@ -25,6 +25,8 @@ builder.Services.AddScoped<ITripService, TripService>();
 
 //Zarejestrowanie walidacji
 builder.Services.AddValidatorsFromAssemblyContaining<ParticipantValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<ReservationValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<TripValidation>();
 
 var app = builder.Build();
 
