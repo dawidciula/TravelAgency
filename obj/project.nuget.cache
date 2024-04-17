@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "h/zrZqew3LTIC/6VnXnoqywMbii/oNa9ZlLZsbORgR5G/4mRl2qLlKjhK7jdOipVBARP5hYmoZkcidkVH7KP9w==",
+  "dgSpecHash": "NXPiuNcsxe4zuKAzF84vw9zZHXuf1GcRVUqcMTsK1AXikKEMNb2EBxA3jITsa5Aiwn4TwypGs+AETA13TmUVXQ==",
   "success": true,
   "projectFilePath": "/Users/dawidciula/RiderProjects/UbbRentalBike/UbbRentalBike.csproj",
   "expectedPackageFiles": [
     "/Users/dawidciula/.nuget/packages/azure.core/1.35.0/azure.core.1.35.0.nupkg.sha512",
     "/Users/dawidciula/.nuget/packages/azure.identity/1.10.3/azure.identity.1.10.3.nupkg.sha512",
+    "/Users/dawidciula/.nuget/packages/fluentvalidation/11.9.0/fluentvalidation.11.9.0.nupkg.sha512",
+    "/Users/dawidciula/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.9.0/fluentvalidation.dependencyinjectionextensions.11.9.0.nupkg.sha512",
     "/Users/dawidciula/.nuget/packages/humanizer/2.14.1/humanizer.2.14.1.nupkg.sha512",
     "/Users/dawidciula/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/dawidciula/.nuget/packages/humanizer.core.af/2.14.1/humanizer.core.af.2.14.1.nupkg.sha512",

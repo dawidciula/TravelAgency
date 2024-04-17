@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using UbbRentalBike.Models;
@@ -8,10 +10,12 @@ namespace UbbRentalBike.Controllers
     public class ParticipantController : Controller
     {
         private readonly IParticipantRepository _participantRepository;
+        private readonly IValidator<Participant> _participantValidator;
 
-        public ParticipantController(IParticipantRepository participantRepository)
+        public ParticipantController(IParticipantRepository participantRepository, IValidator<Participant> participantValidator)
         {
             _participantRepository = participantRepository;
+            _participantValidator = participantValidator;
         }
 
         public IActionResult Index()
@@ -40,10 +44,21 @@ namespace UbbRentalBike.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create([Bind("Name,Surname,DateOfBirth,EmailAddress")] Participant participant)
         {
+            var validationResult = _participantValidator.Validate(participant);
+            if (!validationResult.IsValid)
+            {
+                foreach (var error in validationResult.Errors)
+                {
+                    ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+                }
+                return View(participant);
+            }
+            
             if (ModelState.IsValid)
             {
                 _participantRepository.Insert(participant);
                 return RedirectToAction(nameof(Index));
+                
             }
             return View(participant);
         }

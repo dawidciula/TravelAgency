@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using UbbRentalBike.Data;
 using UbbRentalBike.Repository;
 using UbbRentalBike.Services;
+using FluentValidation;
+using UbbRentalBike.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +22,9 @@ builder.Services.AddScoped<IParticipantRepository, ParticipantRepository>();
 builder.Services.AddScoped<ITripRepository, TripRepository>();
 
 builder.Services.AddScoped<ITripService, TripService>();
+
+//Zarejestrowanie walidacji
+builder.Services.AddValidatorsFromAssemblyContaining<ParticipantValidator>();
 
 var app = builder.Build();
 
