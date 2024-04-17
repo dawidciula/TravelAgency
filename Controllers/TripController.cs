@@ -2,16 +2,19 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using UbbRentalBike.Models;
 using UbbRentalBike.Repository;
+using FluentValidation;
 
 namespace UbbRentalBike.Controllers
 {
     public class TripController : Controller
     {
        private readonly ITripRepository _tripRepository;
+       private readonly IValidator<Trip> _tripValidator;
 
-        public TripController(ITripRepository tripRepository)
+        public TripController(ITripRepository tripRepository, IValidator<Trip> tripValidator)
         {
             _tripRepository = tripRepository;
+            _tripValidator = tripValidator;
         }
 
         public IActionResult Index()
@@ -40,12 +43,17 @@ namespace UbbRentalBike.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create([Bind("TripName,StartDate,EndDate,PlaceOfDeparture,Destination")] Trip trip)
         {
-            if (ModelState.IsValid)
+            var validationResult = _tripValidator.Validate(trip);
+            if (!validationResult.IsValid)
             {
-                _tripRepository.Insert(trip);
-                return RedirectToAction(nameof(Index));
+                foreach (var error in validationResult.Errors)
+                {
+                    ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+                }
+                return View(trip);
             }
-            return View(trip);
+            _tripRepository.Insert(trip);
+            return RedirectToAction(nameof(Index));
         }
 
         public IActionResult Edit(int id)

@@ -1,3 +1,4 @@
+using FluentValidation;
 namespace UbbRentalBike.Models;
 
 public class Participant
@@ -9,4 +10,23 @@ public class Participant
     public string EmailAddress { get; set; }
     
     public List<Reservation>? Reservation { get; set; }
+}
+
+public class ParticipantValidator : AbstractValidator<Participant>
+{
+    public ParticipantValidator()
+    {
+        RuleFor(participant => participant.Name)
+            .NotEmpty().WithMessage("Pole Imię jest wymagane.");
+
+        RuleFor(participant => participant.Surname)
+            .NotEmpty().WithMessage("Pole Nazwisko jest wymagane.");
+
+        RuleFor(participant => participant.DateOfBirth)
+            .NotEmpty().WithMessage("Pole Data urodzenia jest wymagane.");
+
+        RuleFor(participant => participant.EmailAddress)
+            .NotEmpty().WithMessage("Pole Adres email jest wymagane.")
+            .EmailAddress().WithMessage("Nieprawidłowy format adresu email.");
+    }
 }

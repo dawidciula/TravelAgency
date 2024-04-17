@@ -608,3 +608,5 @@ C:/Users/Student/Desktop/UbbRentalBike/obj/Debug/net8.0/ref/UbbRentalBike.dll
 /Users/dawidciula/RiderProjects/UbbRentalBike/obj/Debug/net8.0/UbbRentalBike.pdb
 /Users/dawidciula/RiderProjects/UbbRentalBike/obj/Debug/net8.0/UbbRentalBike.genruntimeconfig.cache
 /Users/dawidciula/RiderProjects/UbbRentalBike/obj/Debug/net8.0/ref/UbbRentalBike.dll
+/Users/dawidciula/RiderProjects/UbbRentalBike/bin/Debug/net8.0/FluentValidation.dll
+/Users/dawidciula/RiderProjects/UbbRentalBike/bin/Debug/net8.0/FluentValidation.DependencyInjectionExtensions.dll

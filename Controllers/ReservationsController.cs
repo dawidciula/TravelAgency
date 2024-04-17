@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -13,10 +13,12 @@ namespace UbbRentalBike.Controllers
     public class ReservationsController : Controller
     {
         private readonly RentalContext _context;
+        private readonly IValidator<Reservation> _reservationValidator;
 
-        public ReservationsController(RentalContext context)
+        public ReservationsController(RentalContext context, IValidator<Reservation> reservationValidator)
         {
             _context = context;
+            _reservationValidator = reservationValidator;
         }
 
         // GET: Reservations
@@ -61,6 +63,15 @@ namespace UbbRentalBike.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,ParticipantId,TripId,ReservationDate")] Reservation reservation)
         {
+            var validationResult = _reservationValidator.Validate(reservation);
+            if (!validationResult.IsValid)
+            {
+                foreach (var error in validationResult.Errors)
+                {
+                    ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+                }
+                return View(reservation);
+            }
             if (ModelState.IsValid)
             {
                 _context.Add(reservation);
