@@ -1,26 +1,33 @@
+using AutoMapper;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
 using UbbRentalBike.Models;
 using UbbRentalBike.Repository;
-using FluentValidation;
+using UbbRentalBike.ViewModels;
 
 namespace UbbRentalBike.Controllers
 {
     public class TripController : Controller
     {
-       private readonly ITripRepository _tripRepository;
-       private readonly IValidator<Trip> _tripValidator;
+        private readonly ITripRepository _tripRepository;
+        private readonly IValidator<Trip> _tripValidator;
+        private readonly IMapper _mapper;
 
-        public TripController(ITripRepository tripRepository, IValidator<Trip> tripValidator)
+        public TripController(ITripRepository tripRepository, IValidator<Trip> tripValidator, IMapper mapper)
         {
             _tripRepository = tripRepository;
             _tripValidator = tripValidator;
+            _mapper = mapper;
         }
 
         public IActionResult Index()
         {
             var trips = _tripRepository.GetAll();
-            return View(trips);
+            var tripDtos = _mapper.Map<IEnumerable<TripDto>>(trips);
+            return View(tripDtos);
         }
 
         public IActionResult Details(int id)
@@ -31,7 +38,8 @@ namespace UbbRentalBike.Controllers
                 return NotFound();
             }
 
-            return View(trip);
+            var tripDto = _mapper.Map<TripDto>(trip);
+            return View(tripDto);
         }
 
         public IActionResult Create()
@@ -41,8 +49,10 @@ namespace UbbRentalBike.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("TripName,StartDate,EndDate,PlaceOfDeparture,Destination")] Trip trip)
+        public IActionResult Create([Bind("TripName,StartDate,EndDate,PlaceOfDeparture,Destination")] TripDto tripDto)
         {
+            var trip = _mapper.Map<Trip>(tripDto);
+
             var validationResult = _tripValidator.Validate(trip);
             if (!validationResult.IsValid)
             {
@@ -50,8 +60,9 @@ namespace UbbRentalBike.Controllers
                 {
                     ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
                 }
-                return View(trip);
+                return View(tripDto);
             }
+
             _tripRepository.Insert(trip);
             return RedirectToAction(nameof(Index));
         }
@@ -63,17 +74,21 @@ namespace UbbRentalBike.Controllers
             {
                 return NotFound();
             }
-            return View(trip);
+
+            var tripDto = _mapper.Map<TripDto>(trip);
+            return View(tripDto);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind("TripName,StartDate,EndDate,PlaceOfDeparture,Destination")] Trip trip)
+        public IActionResult Edit(int id, [Bind("Id,TripName,StartDate,EndDate,PlaceOfDeparture,Destination")] TripDto tripDto)
         {
-            if (id != trip.Id)
+            if (id != tripDto.Id)
             {
                 return NotFound();
             }
+
+            var trip = _mapper.Map<Trip>(tripDto);
 
             if (ModelState.IsValid)
             {
@@ -94,7 +109,7 @@ namespace UbbRentalBike.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(trip);
+            return View(tripDto);
         }
 
         public IActionResult Delete(int id)
@@ -105,7 +120,8 @@ namespace UbbRentalBike.Controllers
                 return NotFound();
             }
 
-            return View(trip);
+            var tripDto = _mapper.Map<TripDto>(trip);
+            return View(tripDto);
         }
 
         [HttpPost, ActionName("Delete")]
