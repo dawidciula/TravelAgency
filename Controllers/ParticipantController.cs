@@ -1,9 +1,10 @@
-using System.ComponentModel.DataAnnotations;
+using AutoMapper;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using UbbRentalBike.Models;
 using UbbRentalBike.Repository;
+using UbbRentalBike.ViewModels;
 
 namespace UbbRentalBike.Controllers
 {
@@ -11,11 +12,13 @@ namespace UbbRentalBike.Controllers
     {
         private readonly IParticipantRepository _participantRepository;
         private readonly IValidator<Participant> _participantValidator;
+        private readonly IMapper _mapper;
 
-        public ParticipantController(IParticipantRepository participantRepository, IValidator<Participant> participantValidator)
+        public ParticipantController(IParticipantRepository participantRepository, IValidator<Participant> participantValidator, IMapper mapper)
         {
             _participantRepository = participantRepository;
             _participantValidator = participantValidator;
+            _mapper = mapper;
         }
 
         public IActionResult Index()
@@ -32,7 +35,8 @@ namespace UbbRentalBike.Controllers
                 return NotFound();
             }
 
-            return View(participant);
+            var participantDto = _mapper.Map<ParticipantDto>(participant);
+            return View(participantDto);
         }
 
         public IActionResult Create()

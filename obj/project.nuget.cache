@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "NXPiuNcsxe4zuKAzF84vw9zZHXuf1GcRVUqcMTsK1AXikKEMNb2EBxA3jITsa5Aiwn4TwypGs+AETA13TmUVXQ==",
+  "dgSpecHash": "LYRj2Divl+v2QLnOqR43FWpLT+aYIl0Y1JW2g6HGibBVc52ogHKVbYJCEhd5aDjiM3mLNZRUMtW0rXqY+B61xw==",
   "success": true,
   "projectFilePath": "/Users/dawidciula/RiderProjects/UbbRentalBike/UbbRentalBike.csproj",
   "expectedPackageFiles": [
+    "/Users/dawidciula/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
+    "/Users/dawidciula/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "/Users/dawidciula/.nuget/packages/azure.core/1.35.0/azure.core.1.35.0.nupkg.sha512",
     "/Users/dawidciula/.nuget/packages/azure.identity/1.10.3/azure.identity.1.10.3.nupkg.sha512",
     "/Users/dawidciula/.nuget/packages/fluentvalidation/11.9.0/fluentvalidation.11.9.0.nupkg.sha512",
@@ -73,7 +75,7 @@
     "/Users/dawidciula/.nuget/packages/microsoft.codeanalysis.razor/6.0.24/microsoft.codeanalysis.razor.6.0.24.nupkg.sha512",
     "/Users/dawidciula/.nuget/packages/microsoft.codeanalysis.scripting.common/4.8.0-3.final/microsoft.codeanalysis.scripting.common.4.8.0-3.final.nupkg.sha512",
     "/Users/dawidciula/.nuget/packages/microsoft.codeanalysis.workspaces.common/4.8.0-3.final/microsoft.codeanalysis.workspaces.common.4.8.0-3.final.nupkg.sha512",
-    "/Users/dawidciula/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
+    "/Users/dawidciula/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/dawidciula/.nuget/packages/microsoft.data.sqlclient/5.1.4/microsoft.data.sqlclient.5.1.4.nupkg.sha512",
     "/Users/dawidciula/.nuget/packages/microsoft.data.sqlclient.sni.runtime/5.1.1/microsoft.data.sqlclient.sni.runtime.5.1.1.nupkg.sha512",
     "/Users/dawidciula/.nuget/packages/microsoft.data.sqlite.core/8.0.2/microsoft.data.sqlite.core.8.0.2.nupkg.sha512",
