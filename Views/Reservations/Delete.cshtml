@@ -1,4 +1,4 @@
-@model UbbRentalBike.Models.Reservation
+@model UbbRentalBike.ViewModels.ReservationDto
 
 @{
     ViewData["Title"] = "Delete";
@@ -12,23 +12,23 @@
     <h4>Reservation</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.ReservationDate)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.ReservationDate)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Particpant)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ParticipantId)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Particpant.Id)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ParticipantId)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Trip)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TripId)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Trip.Id)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TripId)
         </dd>
     </dl>
     

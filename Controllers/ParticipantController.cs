@@ -1,9 +1,10 @@
-using System.ComponentModel.DataAnnotations;
+using AutoMapper;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using UbbRentalBike.Models;
 using UbbRentalBike.Repository;
+using UbbRentalBike.ViewModels;
 
 namespace UbbRentalBike.Controllers
 {
@@ -11,17 +12,20 @@ namespace UbbRentalBike.Controllers
     {
         private readonly IParticipantRepository _participantRepository;
         private readonly IValidator<Participant> _participantValidator;
+        private readonly IMapper _mapper;
 
-        public ParticipantController(IParticipantRepository participantRepository, IValidator<Participant> participantValidator)
+        public ParticipantController(IParticipantRepository participantRepository, IValidator<Participant> participantValidator, IMapper mapper)
         {
             _participantRepository = participantRepository;
             _participantValidator = participantValidator;
+            _mapper = mapper;
         }
 
         public IActionResult Index()
         {
             var participants = _participantRepository.GetAll();
-            return View(participants);
+            var participantDtos = _mapper.Map<List<ParticipantDto>>(participants);
+            return View(participantDtos);
         }
 
         public IActionResult Details(int id)
@@ -32,7 +36,8 @@ namespace UbbRentalBike.Controllers
                 return NotFound();
             }
 
-            return View(participant);
+            var participantDto = _mapper.Map<ParticipantDto>(participant);
+            return View(participantDto);
         }
 
         public IActionResult Create()
@@ -42,8 +47,10 @@ namespace UbbRentalBike.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("Name,Surname,DateOfBirth,EmailAddress")] Participant participant)
+        public IActionResult Create([Bind("Name,Surname,DateOfBirth,EmailAddress")] ParticipantDto participantDto)
         {
+            var participant = _mapper.Map<Participant>(participantDto);
+
             var validationResult = _participantValidator.Validate(participant);
             if (!validationResult.IsValid)
             {
@@ -51,8 +58,9 @@ namespace UbbRentalBike.Controllers
                 {
                     ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
                 }
-                return View(participant);
+                return View(participantDto);
             }
+
             _participantRepository.Insert(participant);
             return RedirectToAction(nameof(Index));
         }
@@ -64,17 +72,20 @@ namespace UbbRentalBike.Controllers
             {
                 return NotFound();
             }
-            return View(participant);
+            var participantDto = _mapper.Map<ParticipantDto>(participant);
+            return View(participantDto);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind("Id,Name,Surname,DateOfBirth,EmailAddress")] Participant participant)
+        public IActionResult Edit(int id, [Bind("Id,Name,Surname,DateOfBirth,EmailAddress")] ParticipantDto participantDto)
         {
-            if (id != participant.Id)
+            if (id != participantDto.Id)
             {
                 return NotFound();
             }
+
+            var participant = _mapper.Map<Participant>(participantDto);
 
             if (ModelState.IsValid)
             {
@@ -95,7 +106,7 @@ namespace UbbRentalBike.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(participant);
+            return View(participantDto);
         }
 
         public IActionResult Delete(int id)
@@ -106,7 +117,8 @@ namespace UbbRentalBike.Controllers
                 return NotFound();
             }
 
-            return View(participant);
+            var participantDto = _mapper.Map<ParticipantDto>(participant);
+            return View(participantDto);
         }
 
         [HttpPost, ActionName("Delete")]

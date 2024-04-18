@@ -28,6 +28,9 @@ builder.Services.AddValidatorsFromAssemblyContaining<ParticipantValidator>();
 builder.Services.AddValidatorsFromAssemblyContaining<ReservationValidator>();
 builder.Services.AddValidatorsFromAssemblyContaining<TripValidation>();
 
+//Zarejestrowanie automapper'a
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
 var app = builder.Build();
 
 // Create database if it doesn't exist

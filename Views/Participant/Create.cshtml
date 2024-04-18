@@ -1,4 +1,4 @@
-@model UbbRentalBike.Models.Participant
+@model UbbRentalBike.ViewModels.ParticipantDto
 
 @{
     ViewData["Title"] = "Create";
@@ -8,23 +8,23 @@
 
 <form asp-action="Create">
     <div class="form-group">
-        <label asp-for="Name" class="control-label"></label>
-        <input asp-for="Name" class="form-control" />
-        <span asp-validation-for="Name" class="text-danger"></span>
-    </div>
+            <label asp-for="Name" class="control-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
     <div class="form-group">
         <label asp-for="Surname" class="control-label"></label>
-        <input asp-for="Surname" class="form-control" />
+        <input asp-for="Surname" class="form-control"/>
         <span asp-validation-for="Surname" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="DateOfBirth" class="control-label"></label>
-        <input asp-for="DateOfBirth" class="form-control" />
+        <input asp-for="DateOfBirth" class="form-control"/>
         <span asp-validation-for="DateOfBirth" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="EmailAddress" class="control-label"></label>
-        <input asp-for="EmailAddress" class="form-control" />
+        <input asp-for="EmailAddress" class="form-control"/>
         <span asp-validation-for="EmailAddress" class="text-danger"></span>
     </div>
     <button type="submit" class="btn btn-primary">Create</button>
