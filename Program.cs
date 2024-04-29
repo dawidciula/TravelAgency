@@ -4,6 +4,7 @@ using UbbRentalBike.Repository;
 using UbbRentalBike.Services;
 using FluentValidation;
 using UbbRentalBike.Models;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +15,12 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<RentalContext>((serviceProvider, options) =>
 {
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"), 
-        new MySqlServerVersion(new Version(8, 0, 27)));
+        new MySqlServerVersion(new Version(8, 3, 0)));
+});
+builder.Services.AddDbContext<UbbRentalBikeContext>((serviceProvider, options) =>
+{
+    options.UseMySql(builder.Configuration.GetConnectionString("UbbRentalBikeContextConnection"), 
+        new MySqlServerVersion(new Version(8, 3, 0)));
 });
 
 // Dodaj repozytorium do kontenera wstrzykiwania zależności
@@ -30,6 +36,12 @@ builder.Services.AddValidatorsFromAssemblyContaining<TripValidation>();
 
 //Zarejestrowanie automapper'a
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
+//Konfiguracja Identity
+builder.Services.AddDefaultIdentity<IdentityUser>(
+    options => options.SignIn.RequireConfirmedAccount = true
+).AddEntityFrameworkStores<UbbRentalBikeContext>();
+builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
@@ -64,6 +76,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseAuthentication();
+app.MapRazorPages();
 
 app.MapControllerRoute(
     name: "default",
