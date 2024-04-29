@@ -1,8 +1,10 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using UbbRentalBike.Services;
 
 namespace UbbRentalBike.Controllers
 {
+    [Authorize]
     public class TripServiceController : Controller
     {
         private readonly ITripService _tripService;
