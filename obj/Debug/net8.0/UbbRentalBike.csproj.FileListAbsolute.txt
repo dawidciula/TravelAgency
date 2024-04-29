@@ -578,7 +578,6 @@ C:/Users/Student/Desktop/UbbRentalBike/obj/Debug/net8.0/ref/UbbRentalBike.dll
 /Users/dawidciula/RiderProjects/UbbRentalBike/bin/Debug/net8.0/runtimes/win-arm64/native/e_sqlite3.dll
 /Users/dawidciula/RiderProjects/UbbRentalBike/bin/Debug/net8.0/runtimes/win-x64/native/e_sqlite3.dll
 /Users/dawidciula/RiderProjects/UbbRentalBike/bin/Debug/net8.0/runtimes/win-x86/native/e_sqlite3.dll
-/Users/dawidciula/RiderProjects/UbbRentalBike/bin/Debug/net8.0/runtimes/win/lib/net7.0/System.Diagnostics.EventLog.Messages.dll
 /Users/dawidciula/RiderProjects/UbbRentalBike/bin/Debug/net8.0/runtimes/win/lib/net7.0/System.Drawing.Common.dll
 /Users/dawidciula/RiderProjects/UbbRentalBike/bin/Debug/net8.0/runtimes/win/lib/net6.0/System.Runtime.Caching.dll
 /Users/dawidciula/RiderProjects/UbbRentalBike/bin/Debug/net8.0/runtimes/win/lib/net7.0/System.Security.Cryptography.ProtectedData.dll
@@ -602,7 +601,6 @@ C:/Users/Student/Desktop/UbbRentalBike/obj/Debug/net8.0/ref/UbbRentalBike.dll
 /Users/dawidciula/RiderProjects/UbbRentalBike/obj/Debug/net8.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
 /Users/dawidciula/RiderProjects/UbbRentalBike/obj/Debug/net8.0/scopedcss/bundle/UbbRentalBike.styles.css
 /Users/dawidciula/RiderProjects/UbbRentalBike/obj/Debug/net8.0/scopedcss/projectbundle/UbbRentalBike.bundle.scp.css
-/Users/dawidciula/RiderProjects/UbbRentalBike/obj/Debug/net8.0/UbbRentalBike.csproj.CopyComplete
 /Users/dawidciula/RiderProjects/UbbRentalBike/obj/Debug/net8.0/UbbRentalBike.dll
 /Users/dawidciula/RiderProjects/UbbRentalBike/obj/Debug/net8.0/refint/UbbRentalBike.dll
 /Users/dawidciula/RiderProjects/UbbRentalBike/obj/Debug/net8.0/UbbRentalBike.pdb
@@ -612,3 +610,15 @@ C:/Users/Student/Desktop/UbbRentalBike/obj/Debug/net8.0/ref/UbbRentalBike.dll
 /Users/dawidciula/RiderProjects/UbbRentalBike/bin/Debug/net8.0/FluentValidation.DependencyInjectionExtensions.dll
 /Users/dawidciula/RiderProjects/UbbRentalBike/bin/Debug/net8.0/AutoMapper.dll
 /Users/dawidciula/RiderProjects/UbbRentalBike/bin/Debug/net8.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+/Users/dawidciula/RiderProjects/UbbRentalBike/obj/Debug/net8.0/UbbRenta.612E4E0A.Up2Date
+/Users/dawidciula/RiderProjects/UbbRentalBike/bin/Debug/net8.0/System.Text.Encodings.Web.dll
+/Users/dawidciula/RiderProjects/UbbRentalBike/bin/Debug/net8.0/System.Text.Json.dll
+/Users/dawidciula/RiderProjects/UbbRentalBike/bin/Debug/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
+/Users/dawidciula/RiderProjects/UbbRentalBike/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/Users/dawidciula/RiderProjects/UbbRentalBike/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/Users/dawidciula/RiderProjects/UbbRentalBike/bin/Debug/net8.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/Users/dawidciula/RiderProjects/UbbRentalBike/bin/Debug/net8.0/Microsoft.AspNetCore.Identity.UI.dll
+/Users/dawidciula/RiderProjects/UbbRentalBike/bin/Debug/net8.0/Microsoft.Extensions.FileProviders.Embedded.dll
+/Users/dawidciula/RiderProjects/UbbRentalBike/bin/Debug/net8.0/Microsoft.Extensions.Identity.Core.dll
+/Users/dawidciula/RiderProjects/UbbRentalBike/bin/Debug/net8.0/Microsoft.Extensions.Identity.Stores.dll
+/Users/dawidciula/RiderProjects/UbbRentalBike/obj/Debug/net8.0/UbbRentalBike.MvcApplicationPartsAssemblyInfo.cs
