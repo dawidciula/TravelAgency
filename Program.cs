@@ -26,7 +26,6 @@ builder.Services.AddDbContext<UbbRentalBikeContext>((serviceProvider, options) =
 // Dodaj repozytorium do kontenera wstrzykiwania zależności
 builder.Services.AddScoped<IParticipantRepository, ParticipantRepository>();
 builder.Services.AddScoped<ITripRepository, TripRepository>();
-
 builder.Services.AddScoped<ITripService, TripService>();
 
 //Zarejestrowanie walidacji
@@ -40,8 +39,20 @@ builder.Services.AddAutoMapper(typeof(Program).Assembly);
 //Konfiguracja Identity
 builder.Services.AddDefaultIdentity<IdentityUser>(
     options => options.SignIn.RequireConfirmedAccount = true
-).AddEntityFrameworkStores<UbbRentalBikeContext>();
+)
+.AddRoles<IdentityRole>()
+.AddDefaultTokenProviders()
+.AddDefaultUI()
+.AddEntityFrameworkStores<UbbRentalBikeContext>();
 builder.Services.AddRazorPages();
+
+//Dodanie polityk autoryzacji
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
+    options.AddPolicy("Manager", policy => policy.RequireRole("Manager"));
+    options.AddPolicy("Member", policy => policy.RequireRole("Member"));
+});
 
 var app = builder.Build();
 
@@ -59,6 +70,21 @@ using (var scope = app.Services.CreateScope())
         // Handle any errors while creating the database
         var logger = services.GetRequiredService<ILogger<Program>>();
         logger.LogError(ex, "An error occurred creating the DB.");
+    }
+}
+
+//Skonfigurowanie ról do bazy danych
+using (var scope = app.Services.CreateScope())
+{
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    var roles = new[] { "Admin", "Manager", "Member" };
+ 
+    foreach (var role in roles)
+    {
+        if (!await roleManager.RoleExistsAsync(role))
+        {
+            await roleManager.CreateAsync(new IdentityRole(role));
+        }
     }
 }
 

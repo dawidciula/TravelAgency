@@ -1,5 +1,6 @@
 using AutoMapper;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using UbbRentalBike.Models;
@@ -45,6 +46,7 @@ namespace UbbRentalBike.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create([Bind("Name,Surname,DateOfBirth,EmailAddress")] ParticipantDto participantDto)
