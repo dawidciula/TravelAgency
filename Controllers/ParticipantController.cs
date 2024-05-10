@@ -29,6 +29,7 @@ namespace UbbRentalBike.Controllers
             return View(participantDtos);
         }
 
+        [Authorize(Policy = "ManagerOrAdmin")]
         public IActionResult Details(int id)
         {
             var participant = _participantRepository.GetById(id);
@@ -45,8 +46,7 @@ namespace UbbRentalBike.Controllers
         {
             return View();
         }
-
-        [Authorize(Roles = "Admin")]
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create([Bind("Name,Surname,DateOfBirth,EmailAddress")] ParticipantDto participantDto)

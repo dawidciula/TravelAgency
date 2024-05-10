@@ -38,7 +38,7 @@ builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 //Konfiguracja Identity
 builder.Services.AddDefaultIdentity<IdentityUser>(
-    options => options.SignIn.RequireConfirmedAccount = true
+    options => options.SignIn.RequireConfirmedAccount = false
 )
 .AddRoles<IdentityRole>()
 .AddDefaultTokenProviders()
@@ -49,10 +49,12 @@ builder.Services.AddRazorPages();
 //Dodanie polityk autoryzacji
 builder.Services.AddAuthorization(options =>
 {
-    options.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
-    options.AddPolicy("Manager", policy => policy.RequireRole("Manager"));
-    options.AddPolicy("Member", policy => policy.RequireRole("Member"));
+    options.AddPolicy("ManagerOrAdmin", policy => 
+    {
+        policy.RequireRole("Manager", "Admin");
+    });
 });
+
 
 var app = builder.Build();
 
@@ -87,6 +89,40 @@ using (var scope = app.Services.CreateScope())
         }
     }
 }
+using (var scope = app.Services.CreateScope())
+{
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
+    string email = "admin@admin.com";
+    string password = "Admin123@";
+    
+    if (await userManager.FindByEmailAsync(email) == null)
+    {
+        var user = new IdentityUser();
+        user.UserName = email;
+        user.Email = email;
+
+        await userManager.CreateAsync(user, password);
+
+        await userManager.AddToRoleAsync(user, "Admin");
+    }
+}
+using (var scope = app.Services.CreateScope())
+{
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
+    string email = "manager@manager.com";
+    string password = "Manager123@";
+    
+    if (await userManager.FindByEmailAsync(email) == null)
+    {
+        var user = new IdentityUser();
+        user.UserName = email;
+        user.Email = email;
+
+        await userManager.CreateAsync(user, password);
+
+        await userManager.AddToRoleAsync(user, "Manager");
+    }
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -101,8 +137,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
 app.UseAuthentication();
+app.UseAuthorization();
 app.MapRazorPages();
 
 app.MapControllerRoute(
