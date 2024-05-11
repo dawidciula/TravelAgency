@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
 using UbbRentalBike.Data;
 using UbbRentalBike.Repository;
@@ -38,7 +39,14 @@ builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 //Konfiguracja Identity
 builder.Services.AddDefaultIdentity<IdentityUser>(
-    options => options.SignIn.RequireConfirmedAccount = false
+    options =>
+    {
+        options.SignIn.RequireConfirmedAccount = false;
+        //Dodanie 'claim' dla uzytkownikow
+        options.ClaimsIdentity.UserIdClaimType = ClaimTypes.NameIdentifier;
+        options.ClaimsIdentity.UserNameClaimType = ClaimTypes.Name;
+        options.ClaimsIdentity.RoleClaimType = ClaimTypes.Role;
+    }
 )
 .AddRoles<IdentityRole>()
 .AddDefaultTokenProviders()
@@ -49,11 +57,12 @@ builder.Services.AddRazorPages();
 //Dodanie polityk autoryzacji
 builder.Services.AddAuthorization(options =>
 {
-    options.AddPolicy("ManagerOrAdmin", policy => 
+    options.AddPolicy("ManagerOrAdmin", policy =>
     {
-        policy.RequireRole("Manager", "Admin");
+        policy.RequireClaim(ClaimTypes.Role, "Manager", "Admin");
     });
 });
+
 
 
 var app = builder.Build();
@@ -103,7 +112,7 @@ using (var scope = app.Services.CreateScope())
 
         await userManager.CreateAsync(user, password);
 
-        await userManager.AddToRoleAsync(user, "Admin");
+        await userManager.AddClaimAsync(user, new Claim(ClaimTypes.Role, "Admin"));
     }
 }
 using (var scope = app.Services.CreateScope())
@@ -120,7 +129,7 @@ using (var scope = app.Services.CreateScope())
 
         await userManager.CreateAsync(user, password);
 
-        await userManager.AddToRoleAsync(user, "Manager");
+        await userManager.AddClaimAsync(user, new Claim(ClaimTypes.Role, "Manager"));
     }
 }
 
