@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 using UbbRentalBike.Models;
 using UbbRentalBike.ViewModel;
 
@@ -52,7 +53,7 @@ namespace UbbRentalBike.Controllers
         {
             return View(_trips);
         }
-
+        
         public IActionResult Privacy()
         {
             return View();

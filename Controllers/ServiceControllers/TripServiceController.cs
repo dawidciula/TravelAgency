@@ -13,7 +13,7 @@ namespace UbbRentalBike.Controllers
         {
             _tripService = tripService;
         }
-
+        
         public IActionResult Index(int page = 1, string nameFilter = null, int? tripId = null, string buttonType = null)
         {
             if (tripId.HasValue)

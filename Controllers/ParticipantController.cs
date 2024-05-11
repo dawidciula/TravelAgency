@@ -1,5 +1,6 @@
 using AutoMapper;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using UbbRentalBike.Models;
@@ -28,6 +29,7 @@ namespace UbbRentalBike.Controllers
             return View(participantDtos);
         }
 
+        [Authorize(Policy = "ManagerOrAdmin")]
         public IActionResult Details(int id)
         {
             var participant = _participantRepository.GetById(id);
@@ -44,7 +46,7 @@ namespace UbbRentalBike.Controllers
         {
             return View();
         }
-
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create([Bind("Name,Surname,DateOfBirth,EmailAddress")] ParticipantDto participantDto)

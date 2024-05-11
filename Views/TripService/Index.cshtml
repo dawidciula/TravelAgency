@@ -1,20 +1,26 @@
 @model IEnumerable<UbbRentalBike.Models.Trip>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInMaganer
+@inject UserManager<IdentityUser> UserManager
 
 <h1>Lista Wycieczek</h1>
 
-<form asp-action="Index" asp-controller="TripService" method="get">
-    <div>
-        <input type="text" name="nameFilter" placeholder="Wyszukaj po nazwie">
-        <button type="submit">Filtruj</button>
-    </div>
-</form>
+@if (User.IsInRole("Admin"))
+{
+    <form asp-action="Index" asp-controller="TripService" method="get">
+        <div>
+            <input type="text" name="nameFilter" placeholder="Wyszukaj po nazwie">
+            <button type="submit">Filtruj</button>
+        </div>
+    </form>
 
-<form asp-action="Index" asp-controller="TripService" method="get">
-    <div>
-        <input type="text" name="tripId" placeholder="Wyszukaj po ID">
-        <button type="submit">Szukaj</button>
-    </div>
-</form>
+    <form asp-action="Index" asp-controller="TripService" method="get">
+        <div>
+            <input type="text" name="tripId" placeholder="Wyszukaj po ID">
+            <button type="submit">Szukaj</button>
+        </div>
+    </form>
+}
 
 <table class="table">
     <thead>

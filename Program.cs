@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
 using UbbRentalBike.Data;
 using UbbRentalBike.Repository;
@@ -26,7 +27,6 @@ builder.Services.AddDbContext<UbbRentalBikeContext>((serviceProvider, options) =
 // Dodaj repozytorium do kontenera wstrzykiwania zależności
 builder.Services.AddScoped<IParticipantRepository, ParticipantRepository>();
 builder.Services.AddScoped<ITripRepository, TripRepository>();
-
 builder.Services.AddScoped<ITripService, TripService>();
 
 //Zarejestrowanie walidacji
@@ -39,9 +39,31 @@ builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 //Konfiguracja Identity
 builder.Services.AddDefaultIdentity<IdentityUser>(
-    options => options.SignIn.RequireConfirmedAccount = true
-).AddEntityFrameworkStores<UbbRentalBikeContext>();
+    options =>
+    {
+        options.SignIn.RequireConfirmedAccount = false;
+        //Dodanie 'claim' dla uzytkownikow
+        options.ClaimsIdentity.UserIdClaimType = ClaimTypes.NameIdentifier;
+        options.ClaimsIdentity.UserNameClaimType = ClaimTypes.Name;
+        options.ClaimsIdentity.RoleClaimType = ClaimTypes.Role;
+    }
+)
+.AddRoles<IdentityRole>()
+.AddDefaultTokenProviders()
+.AddDefaultUI()
+.AddEntityFrameworkStores<UbbRentalBikeContext>();
 builder.Services.AddRazorPages();
+
+//Dodanie polityk autoryzacji
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("ManagerOrAdmin", policy =>
+    {
+        policy.RequireClaim(ClaimTypes.Role, "Manager", "Admin");
+    });
+});
+
+
 
 var app = builder.Build();
 
@@ -62,6 +84,55 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
+//Skonfigurowanie ról do bazy danych
+using (var scope = app.Services.CreateScope())
+{
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    var roles = new[] { "Admin", "Manager", "Member" };
+ 
+    foreach (var role in roles)
+    {
+        if (!await roleManager.RoleExistsAsync(role))
+        {
+            await roleManager.CreateAsync(new IdentityRole(role));
+        }
+    }
+}
+using (var scope = app.Services.CreateScope())
+{
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
+    string email = "admin@admin.com";
+    string password = "Admin123@";
+    
+    if (await userManager.FindByEmailAsync(email) == null)
+    {
+        var user = new IdentityUser();
+        user.UserName = email;
+        user.Email = email;
+
+        await userManager.CreateAsync(user, password);
+
+        await userManager.AddClaimAsync(user, new Claim(ClaimTypes.Role, "Admin"));
+    }
+}
+using (var scope = app.Services.CreateScope())
+{
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
+    string email = "manager@manager.com";
+    string password = "Manager123@";
+    
+    if (await userManager.FindByEmailAsync(email) == null)
+    {
+        var user = new IdentityUser();
+        user.UserName = email;
+        user.Email = email;
+
+        await userManager.CreateAsync(user, password);
+
+        await userManager.AddClaimAsync(user, new Claim(ClaimTypes.Role, "Manager"));
+    }
+}
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -75,8 +146,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
 app.UseAuthentication();
+app.UseAuthorization();
 app.MapRazorPages();
 
 app.MapControllerRoute(
