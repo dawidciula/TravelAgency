@@ -9,6 +9,9 @@
       "TravelAgencyTests/1.0.0": {
         "dependencies": {
           "Microsoft.NET.Test.Sdk": "17.6.0",
+          "Selenium.Support": "4.21.0",
+          "Selenium.WebDriver": "4.21.0",
+          "Selenium.WebDriver.ChromeDriver": "126.0.6478.1700-beta",
           "UbbRentalBike": "1.0.0",
           "coverlet.collector": "6.0.0",
           "xunit": "2.4.2",
@@ -2203,6 +2206,29 @@
       "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
+      "Selenium.Support/4.21.0": {
+        "dependencies": {
+          "Selenium.WebDriver": "4.21.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/WebDriver.Support.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      },
+      "Selenium.WebDriver/4.21.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/WebDriver.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      },
+      "Selenium.WebDriver.ChromeDriver/126.0.6478.1700-beta": {},
       "SQLitePCLRaw.bundle_e_sqlite3/2.1.6": {
         "dependencies": {
           "SQLitePCLRaw.lib.e_sqlite3": "2.1.6",
@@ -3201,6 +3227,9 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.1",
           "Moq": "4.20.70",
           "Pomelo.EntityFrameworkCore.MySql": "9.0.0-preview.1",
+          "Selenium.Support": "4.21.0",
+          "Selenium.WebDriver": "4.21.0",
+          "Selenium.WebDriver.ChromeDriver": "126.0.6478.1700-beta",
           "xunit": "2.4.2"
         },
         "runtime": {
@@ -4334,6 +4363,27 @@
       "sha512": "sha512-VB5cn/7OzUfzdnC8tqAIMQciVLiq2epm2NrAm1E9OjNRyG4lVhfR61SMcLizejzQP8R8Uf/0l5qOIbUEi+RdEg==",
       "path": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "hashPath": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512"
+    },
+    "Selenium.Support/4.21.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MiDIsB/5Ki1AWua/b9v/eGARtI6bxseAt4EOl2fgl7WsoXlV7Zzq5/gGJ7Zs9PLvJUQMbS6WSNWuMdeSr1SXdA==",
+      "path": "selenium.support/4.21.0",
+      "hashPath": "selenium.support.4.21.0.nupkg.sha512"
+    },
+    "Selenium.WebDriver/4.21.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3xIx4CJunIoLEOROfDKILIzf76WfphTpQJYE98stG1GBVBKhFO5E6wXNfCqdiWt34iNlckcDr3z+qCD+RPfuUQ==",
+      "path": "selenium.webdriver/4.21.0",
+      "hashPath": "selenium.webdriver.4.21.0.nupkg.sha512"
+    },
+    "Selenium.WebDriver.ChromeDriver/126.0.6478.1700-beta": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xS06OmceUjR8p8Q51x7I1im+mzHyeh59pf3o7hg/+M4eL86/t9Mno8PISdT/xS9aKbbLMZGOIt3jhwQq7jd0Vw==",
+      "path": "selenium.webdriver.chromedriver/126.0.6478.1700-beta",
+      "hashPath": "selenium.webdriver.chromedriver.126.0.6478.1700-beta.nupkg.sha512"
     },
     "SQLitePCLRaw.bundle_e_sqlite3/2.1.6": {
       "type": "package",

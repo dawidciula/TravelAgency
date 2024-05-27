@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "w4Z47CK+1xk=",
+  "dgSpecHash": "hD4ZnL8WBF8=",
   "success": true,
   "projectFilePath": "/Users/dawidciula/RiderProjects/UbbRentalBike/UbbRentalBike.csproj",
   "expectedPackageFiles": [
@@ -161,6 +161,9 @@
     "/Users/dawidciula/.nuget/packages/runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "/Users/dawidciula/.nuget/packages/runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "/Users/dawidciula/.nuget/packages/runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "/Users/dawidciula/.nuget/packages/selenium.support/4.21.0/selenium.support.4.21.0.nupkg.sha512",
+    "/Users/dawidciula/.nuget/packages/selenium.webdriver/4.21.0/selenium.webdriver.4.21.0.nupkg.sha512",
+    "/Users/dawidciula/.nuget/packages/selenium.webdriver.chromedriver/126.0.6478.1700-beta/selenium.webdriver.chromedriver.126.0.6478.1700-beta.nupkg.sha512",
     "/Users/dawidciula/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.1.6/sqlitepclraw.bundle_e_sqlite3.2.1.6.nupkg.sha512",
     "/Users/dawidciula/.nuget/packages/sqlitepclraw.core/2.1.6/sqlitepclraw.core.2.1.6.nupkg.sha512",
     "/Users/dawidciula/.nuget/packages/sqlitepclraw.lib.e_sqlite3/2.1.6/sqlitepclraw.lib.e_sqlite3.2.1.6.nupkg.sha512",
