@@ -1,2 +1,12 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=292cf95e_002D4691_002D43d0_002D9056_002Df866f9b5d212/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from &amp;lt;TravelAgencyTests&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;Project Location="/Users/dawidciula/RiderProjects/UbbRentalBike/TravelAgencyTests" Presentation="&amp;lt;TravelAgencyTests&amp;gt;" /&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6340d652_002D13f2_002D4b45_002Dbc97_002Da10b28b8723c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from &amp;lt;TravelAgencyTests&amp;gt; #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;Project Location="/Users/dawidciula/RiderProjects/UbbRentalBike/TravelAgencyTests" Presentation="&amp;lt;TravelAgencyTests&amp;gt;" /&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6e38024b_002Dd70c_002D44fe_002Db374_002D876a6ad47393/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from &amp;lt;TravelAgencyTests&amp;gt; #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;Project Location="/Users/dawidciula/RiderProjects/UbbRentalBike/TravelAgencyTests" Presentation="&amp;lt;TravelAgencyTests&amp;gt;" /&gt;
+&lt;/SessionState&gt;</s:String>
+	
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/Initialized/@EntryValue">True</s:Boolean></wpf:ResourceDictionary>
