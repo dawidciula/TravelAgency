@@ -1,10 +1,12 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @model IEnumerable<UbbRentalBike.ViewModels.ParticipantDto>
+@inject IViewLocalizer Localizer
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>@Localizer["Witaj na stronie uczestnika!"]</h2>
 
 <p>
     @Html.ActionLink("Add Participant", "Create")

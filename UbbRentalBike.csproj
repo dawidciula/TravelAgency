@@ -12,6 +12,7 @@
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.9.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Localization" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0-preview.1.24081.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.0-preview.1.24081.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.2" />
@@ -337,6 +338,32 @@
     <UpToDateCheckInput Remove="Views\Participants\Edit.cshtml" />
     <UpToDateCheckInput Remove="Views\Participants\Index.cshtml" />
     <UpToDateCheckInput Remove="Views\TripService\Index.cshtml" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Views\Participant\Index.eu-EU.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.eu-EU.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Participant\Index.pl-PL.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.pl-PL.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Compile Update="Resources\Views\Participant\Index.eu-EU.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Index.eu-EU.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Views\Participant\Index.pl-PL.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Index.pl-PL.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>
