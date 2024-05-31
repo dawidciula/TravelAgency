@@ -1,9 +1,5 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
-using System;
-using Xunit;
-using OpenQA.Selenium.Support;
 using Xunit.Abstractions;
 
 namespace UbbRentalBike.Tests

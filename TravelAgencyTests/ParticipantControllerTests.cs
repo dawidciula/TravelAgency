@@ -70,7 +70,6 @@ public class ParticipantControllerTests
     [Fact]
     public void CreatePost_ValidModel_RedirectsToIndex()
     {
-        // Arrange
         var participantDto = new ParticipantDto { Name = "John", Surname = "Doe" };
         var participant = new Participant { Name = "John", Surname = "Doe" };
         _mapperMock.Setup(m => m.Map<Participant>(participantDto)).Returns(participant);
