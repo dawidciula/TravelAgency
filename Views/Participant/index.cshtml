@@ -6,26 +6,26 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>@Localizer["Witaj na stronie uczestnika!"]</h2>
+<h2>@Localizer["Welcome"]</h2>
 
 <p>
-    @Html.ActionLink("Add Participant", "Create")
+    @Html.ActionLink(Localizer["Add Participant"].Value, "Create")
 </p>
 
 <table class="table">
     <thead>
     <tr>
         <th>
-            Name
+            @Localizer["Name"]
         </th>
         <th>
-            Surname
+            @Localizer["Surname"]
         </th>
         <th>
-            Date of Birth
+            @Localizer["Date of Birth"]
         </th>
         <th>
-            Email Address
+            @Localizer["Email Address"]
         </th>
         <th></th>
     </tr>
@@ -34,9 +34,9 @@
     @foreach (var participant in Model)
     {
         <tr>
-             <td>
-                            @Html.DisplayFor(modelItem => participant.Name)
-                        </td>
+            <td>
+                @Html.DisplayFor(modelItem => participant.Name)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => participant.Surname)
             </td>
@@ -47,9 +47,9 @@
                 @Html.DisplayFor(modelItem => participant.EmailAddress)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = participant.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = participant.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = participant.Id })
+                @Html.ActionLink(Localizer["Edit"].Value, "Edit", new { id = participant.Id }) |
+                @Html.ActionLink(Localizer["Details"].Value, "Details", new { id = participant.Id }) |
+                @Html.ActionLink(Localizer["Delete"].Value, "Delete", new { id = participant.Id })
             </td>
         </tr>
     }

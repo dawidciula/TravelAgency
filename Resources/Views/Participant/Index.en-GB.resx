@@ -18,4 +18,31 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
+    <data name="Welcome" xml:space="preserve">
+        <value>Welcome on participant page!</value>
+    </data>
+    <data name="Add Participant" xml:space="preserve">
+        <value>Add Participant</value>
+    </data>
+    <data name="Name" xml:space="preserve">
+        <value>Name</value>
+    </data>
+    <data name="Surname" xml:space="preserve">
+        <value>Surname</value>
+    </data>
+    <data name="Date of Birth" xml:space="preserve">
+        <value>Date of Birth</value>
+    </data>
+    <data name="Email Address" xml:space="preserve">
+        <value>Email Address</value>
+    </data>
+    <data name="Edit" xml:space="preserve">
+        <value>Edit</value>
+    </data>
+    <data name="Details" xml:space="preserve">
+        <value>Details</value>
+    </data>
+    <data name="Delete" xml:space="preserve">
+        <value>Delete</value>
+    </data>
 </root>

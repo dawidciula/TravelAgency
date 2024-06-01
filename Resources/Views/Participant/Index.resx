@@ -1,11 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-
 <root>
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-        <xsd:element name="root" msdata:IsDataSet="true">
-            
-        </xsd:element>
-    </xsd:schema>
     <resheader name="resmimetype">
         <value>text/microsoft-resx</value>
     </resheader>
@@ -19,30 +12,30 @@
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
     <data name="Welcome" xml:space="preserve">
-        <value>Witaj na stronie uczestnika!</value>
+        <value />
     </data>
     <data name="Add Participant" xml:space="preserve">
-        <value>Dodaj uczestnika</value>
+        <value />
     </data>
     <data name="Name" xml:space="preserve">
-        <value>Imię</value>
+        <value />
     </data>
     <data name="Surname" xml:space="preserve">
-        <value>Nazwisko</value>
+        <value />
     </data>
     <data name="Date of Birth" xml:space="preserve">
-        <value>Data urodzenia</value>
+        <value />
     </data>
     <data name="Email Address" xml:space="preserve">
-        <value>Adres email</value>
+        <value />
     </data>
     <data name="Edit" xml:space="preserve">
-        <value>Edytuj</value>
+        <value />
     </data>
     <data name="Details" xml:space="preserve">
-        <value>Szczegóły</value>
+        <value />
     </data>
     <data name="Delete" xml:space="preserve">
-        <value>Usuń</value>
+        <value />
     </data>
 </root>

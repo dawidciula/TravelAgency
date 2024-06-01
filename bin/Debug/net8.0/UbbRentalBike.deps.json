@@ -31,6 +31,14 @@
         },
         "runtime": {
           "UbbRentalBike.dll": {}
+        },
+        "resources": {
+          "pl-pl/UbbRentalBike.resources.dll": {
+            "locale": "pl-pl"
+          },
+          "en-GB/UbbRentalBike.resources.dll": {
+            "locale": "en-GB"
+          }
         }
       },
       "AutoMapper/12.0.1": {

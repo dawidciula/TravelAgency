@@ -802,3 +802,14 @@ C:/Users/Student/Desktop/UbbRentalBike/obj/Debug/net8.0/ref/UbbRentalBike.dll
 /Users/dawidciula/RiderProjects/UbbRentalBike/bin/Debug/net8.0/Microsoft.AspNetCore.JsonPatch.dll
 /Users/dawidciula/RiderProjects/UbbRentalBike/bin/Debug/net8.0/Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 /Users/dawidciula/RiderProjects/UbbRentalBike/bin/Debug/net8.0/Newtonsoft.Json.Bson.dll
+/Users/dawidciula/RiderProjects/UbbRentalBike/bin/Debug/net8.0/pl-pl/UbbRentalBike.resources.dll
+/Users/dawidciula/RiderProjects/UbbRentalBike/obj/Debug/net8.0/UbbRentalBike.Resources.Views.Participant.Index.pl-PL.resources
+/Users/dawidciula/RiderProjects/UbbRentalBike/obj/Debug/net8.0/UbbRentalBike.csproj.GenerateResource.cache
+/Users/dawidciula/RiderProjects/UbbRentalBike/obj/Debug/net8.0/pl-pl/UbbRentalBike.resources.cs
+/Users/dawidciula/RiderProjects/UbbRentalBike/obj/Debug/net8.0/pl-pl/UbbRentalBike.resources.dll
+/Users/dawidciula/RiderProjects/UbbRentalBike/obj/Debug/net8.0/UbbRentalBike.Resources.Views.Participant.Index.resources
+/Users/dawidciula/RiderProjects/UbbRentalBike/bin/Debug/net8.0/en-GB/UbbRentalBike.resources.dll
+/Users/dawidciula/RiderProjects/UbbRentalBike/obj/Debug/net8.0/UbbRentalBike.Resources.Views.Participant.Index.en-GB.pl-pl.resources
+/Users/dawidciula/RiderProjects/UbbRentalBike/obj/Debug/net8.0/UbbRentalBike.Resources.Views.Participant.Index.en-GB.resources
+/Users/dawidciula/RiderProjects/UbbRentalBike/obj/Debug/net8.0/en-GB/UbbRentalBike.resources.cs
+/Users/dawidciula/RiderProjects/UbbRentalBike/obj/Debug/net8.0/en-GB/UbbRentalBike.resources.dll

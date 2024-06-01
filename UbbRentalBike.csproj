@@ -342,7 +342,7 @@
 
 
   <ItemGroup>
-    <EmbeddedResource Update="Resources\Views\Participant\Index.eu-EU.resx">
+    <EmbeddedResource Update="Resources\Views\Participant\Index.en-GB.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Index.eu-EU.Designer.cs</LastGenOutput>
     </EmbeddedResource>
@@ -354,10 +354,10 @@
 
 
   <ItemGroup>
-    <Compile Update="Resources\Views\Participant\Index.eu-EU.Designer.cs">
+    <Compile Update="Resources\Views\Participant\Index.en-GB.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Index.eu-EU.resx</DependentUpon>
+      <DependentUpon>Index.en-GB.resx</DependentUpon>
     </Compile>
     <Compile Update="Resources\Views\Participant\Index.pl-PL.Designer.cs">
       <DesignTime>True</DesignTime>

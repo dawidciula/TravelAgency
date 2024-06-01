@@ -14,21 +14,21 @@ namespace UbbRentalBike.Resources.Views.Participant {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Index_pl_PL {
+    internal class Index_en_GB {
         
         private static System.Resources.ResourceManager resourceMan;
         
         private static System.Globalization.CultureInfo resourceCulture;
         
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Index_pl_PL() {
+        internal Index_en_GB() {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.Equals(null, resourceMan)) {
-                    System.Resources.ResourceManager temp = new System.Resources.ResourceManager("UbbRentalBike.Resources.Views.Participant.Index_pl_PL", typeof(Index_pl_PL).Assembly);
+                    System.Resources.ResourceManager temp = new System.Resources.ResourceManager("UbbRentalBike.Resources.Views.Participant.Index_en_GB", typeof(Index_en_GB).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

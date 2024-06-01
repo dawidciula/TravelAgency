@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
 using UbbRentalBike.Data;
@@ -6,11 +7,31 @@ using UbbRentalBike.Services;
 using FluentValidation;
 using UbbRentalBike.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc.Razor;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews()
+    .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
+
+//Konfiguracja Localization
+builder.Services.AddLocalization(options =>
+{
+    options.ResourcesPath = "Resources";
+});
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    var supportedCultures = new[]
+    {
+        new CultureInfo("en-GB"),
+        new CultureInfo("pl-PL")
+    };
+
+    options.DefaultRequestCulture = new RequestCulture("pl-PL");
+    options.SupportedUICultures = supportedCultures;
+});
 
 // Dodaj DbContext do kontenera wstrzykiwania zależności
 builder.Services.AddDbContext<RentalContext>((serviceProvider, options) =>
@@ -143,6 +164,8 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+app.UseRequestLocalization();
 
 app.UseRouting();
 
