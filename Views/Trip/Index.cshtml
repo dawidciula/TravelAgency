@@ -1,38 +1,41 @@
+@using Microsoft.AspNetCore.Mvc.Localization
 @model IEnumerable<UbbRentalBike.ViewModels.TripDto>
+@inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = Localizer["Index"];
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>@Localizer["Welcome"]</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">@Localizer["Create New"]</a>
 </p>
 <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.TripName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StartDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EndData)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PlaceOfDeparture)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Destination)
-            </th>
-            <th></th>
-        </tr>
+    <tr>
+        <th>
+            @Localizer["Trip Name"]
+        </th>
+        <th>
+            @Localizer["Start Date"]
+        </th>
+        <th>
+            @Localizer["End Date"]
+        </th>
+        <th>
+            @Localizer["Place of Departure"]
+        </th>
+        <th>
+            @Localizer["Destination"]
+        </th>
+        <th></th>
+    </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.TripName)
@@ -50,11 +53,11 @@
                 @Html.DisplayFor(modelItem => item.Destination)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">@Localizer["Edit"]</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">@Localizer["Details"]</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">@Localizer["Delete"]</a>
             </td>
         </tr>
-}
+    }
     </tbody>
 </table>

@@ -350,6 +350,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Index.pl-PL.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Trip\Index.en-GB.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.en-GB.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Trip\Index.pl-PL.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.pl-PL.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 
@@ -360,6 +368,16 @@
       <DependentUpon>Index.en-GB.resx</DependentUpon>
     </Compile>
     <Compile Update="Resources\Views\Participant\Index.pl-PL.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Index.pl-PL.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Views\Trip\Index.en-GB.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Index.en-GB.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Views\Trip\Index.pl-PL.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Index.pl-PL.resx</DependentUpon>

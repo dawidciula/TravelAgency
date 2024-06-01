@@ -8,9 +8,10 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6e38024b_002Dd70c_002D44fe_002Db374_002D876a6ad47393/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from &amp;lt;TravelAgencyTests&amp;gt; #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;Project Location="/Users/dawidciula/RiderProjects/UbbRentalBike/TravelAgencyTests" Presentation="&amp;lt;TravelAgencyTests&amp;gt;" /&gt;
 &lt;/SessionState&gt;</s:String>
-	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=UbbRentalBike_002FResources_002FViews_002FParticipant_002FIndex/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=UbbRentalBike_002FResources_002FViews_002FParticipant_002FIndex/@EntryIndexedValue">False</s:Boolean>
 	
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=UbbRentalBike_002FResources_002FViews_002FParticipant_002FIndex_002Een_002DGB/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=UbbRentalBike_002FResources_002FViews_002FTrip_002FIndex/@EntryIndexedValue">True</s:Boolean>
 	
 	
 	

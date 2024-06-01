@@ -813,3 +813,6 @@ C:/Users/Student/Desktop/UbbRentalBike/obj/Debug/net8.0/ref/UbbRentalBike.dll
 /Users/dawidciula/RiderProjects/UbbRentalBike/obj/Debug/net8.0/UbbRentalBike.Resources.Views.Participant.Index.en-GB.resources
 /Users/dawidciula/RiderProjects/UbbRentalBike/obj/Debug/net8.0/en-GB/UbbRentalBike.resources.cs
 /Users/dawidciula/RiderProjects/UbbRentalBike/obj/Debug/net8.0/en-GB/UbbRentalBike.resources.dll
+/Users/dawidciula/RiderProjects/UbbRentalBike/obj/Debug/net8.0/UbbRentalBike.Resources.Views.Trip.Index.resources
+/Users/dawidciula/RiderProjects/UbbRentalBike/obj/Debug/net8.0/UbbRentalBike.Resources.Views.Trip.Index.en-GB.resources
+/Users/dawidciula/RiderProjects/UbbRentalBike/obj/Debug/net8.0/UbbRentalBike.Resources.Views.Trip.Index.pl-PL.resources
